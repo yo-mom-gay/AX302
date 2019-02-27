@@ -47,7 +47,7 @@ function create(){
 		player.body.bounce.y = 0.2;
 		player.body.gravity.y = 300;
 		player.body.gravity.y = 300;
-		player.body.collideWorldBounds = true;.
+		player.body.collideWorldBounds = true;
 
 	enemy1 = game.add.sprite(750, 20, 'baddie');
 		enemy1.animations.add('left', [0,1], 10, true);
@@ -68,15 +68,15 @@ function create(){
 
 	}
 	cursors = game.input.keyboard.createCursorKey();
+	
+}
+
+function update(){
 	game.physics.arcade.collide(player, platforms);
 	game.physics.arcade.collide(stars, platforms);
 	game.physics.arcade.collide(enemy1, platforms);
 
 	player.body.velocity.x = 0;
-}
-
-function update(){
-
 } 
 
 
