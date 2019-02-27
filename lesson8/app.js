@@ -23,9 +23,9 @@ function create(){
 	ground.body.immovable = true;
 
 	var ledges = platforms.create(400, 400, 'ground');
-	ledge.body.immovable = true;
-	ledge = platforms.create(-100, 250, 'ground');
-	ledge.body.immovable = true;
+	ledges.body.immovable = true;
+	ledges = platforms.create(-100, 250, 'ground');
+	ledges.body.immovable = true;
 
 	var style = {font: "bold 32px Arial", fill: "#fff"};
 	//positioning the score 
