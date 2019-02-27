@@ -15,7 +15,7 @@ function create(){
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.add.sprite(0,0, 'sky');
 
-	platform = game.add.physicsGroup();
+	platforms = game.add.physicsGroup();
 	platforms.enableBody = true;
 
 	var ground = platforms.create(0, 550, 'ground');
@@ -47,7 +47,7 @@ function create(){
 		player.body.bounce.y = 0.2;
 		player.body.gravity.y = 300;
 		player.body.gravity.y = 300;
-		player.body.collideWorldBounds = true;
+		player.body.collideWorldBounds = true;.
 
 	enemy1 = game.add.sprite(750, 20, 'baddie');
 		enemy1.animations.add('left', [0,1], 10, true);
