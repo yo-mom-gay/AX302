@@ -102,7 +102,7 @@ function update(){
 function collectStar(player, star){
 	score += 1;
 	scoretext.setText(score);
-	star kill();
+	star.kill();
 	star reset (Math.floor(Math.random() * 750), 0);
 }
 
