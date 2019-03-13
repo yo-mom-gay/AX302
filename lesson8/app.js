@@ -38,7 +38,7 @@ function create(){
 	lifelabel = game.add.text(10,5, "Lives:", style);
 	lifetext = game.add.text(120,5, life,style);
 	lifelabel.setShadow(3,3, 'rgba(0,0,0,0.5',2);
-	lifetxt.setShadow(3,3, 'rgba(0,0,0,0.5',2); 
+	lifetext.setShadow(3,3, 'rgba(0,0,0,0.5',2); 
 
 	player = game.add.sprite(32, 400, 'dude');
 		player.animations.add('left', [0,1,2,3], 10, true);
@@ -74,22 +74,69 @@ function create(){
 function update(){
 	game.physics.arcade.collide(player, platforms);
 	game.physics.arcade.collide(stars, platforms);
-	game.physics.arcade.collide(enemy1, platforms);
-
+	game.physics.arcade.collide(enemy1, platforms); 
 	player.body.velocity.x = 0;
+	// Moving player
+	if(cursors.left.isDown){
+		player.body.velocity.x = -150;
+		player.animations.play("left")
+	} else{
+		player.animations.stop();
+		player.frame = 4;
+	}
+
+	// Making player jump
+
+	// Start of L9
+	game.physics.aracde.overlap(player, stars, collectStar);
+	game.physics.arcade.overlap(player, enemy1, loseLife);
+
+	moveEnergy();
+
+	if(life < 0);{
+		endGame();
+
+	}
+ }
+
+function collectStar(player, star){
+	score += 1;
+	scoretext.setText(score);
+	star kill();
+	star reset (Math.floor(Math.random() * 750), 0);
+}
+
+functionLoseLife(player, enemy){
+Life -= 1;
+lifetext.setText(life);
+enemy kill(;
+enemy.reset(10, 20);
+}
+   
+function moveEnemy(){
+if(enemy1.x > 759){
+	enemy1.animations.play('left');
+	enemy1.body.velocity.x = -120;
+	} else if(enemy1.x < 405){
+		enemy1.animations.play('right');
+		enemy1.body.velocity.x = 120;
+
+	} else {
+		player.animations.stop();
+		player.frame = 4;    
+	}
+
 } 
 
 
+function endGame(){
+	player.kill();
+	lifelabel.visible = false;
+	lifetext.visible = false;
+	scoretext.visible = false;
+	scorelabel.text = 'Game over! You scored: ${score}';
 
-
-
-
-
-
-
-
-
-
+} 
 
 
 
