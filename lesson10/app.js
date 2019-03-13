@@ -67,9 +67,9 @@ function create(){
 
 		enterKey = game.input.keyboard.addKey(Phaser.Keyboard.ENTER)
 
-		goText = game.add.text(0,0 ,style);
+		goText = game.add.text(0,0, style);
 		goText.visible = false;
-		goText.
+		goText.setTextBounds(100,200,300,800,1000)
 
 	stars = game.app.physicsGroup();
 	stars.enableBody = true;
