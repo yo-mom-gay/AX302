@@ -133,11 +133,12 @@ function collectHealth(player, health){
 	lifetext.setText(life);
 	health.kill();
 }
-functionLoseLife(player, enemy){
-Life -= 1;
-lifetext.setText(life);
-enemy kill(;
-enemy.reset(10, 20);
+
+function LoseLife(player, enemy){
+	Life -= 1;
+	lifetext.setText(life);
+	enemy kill(;
+	enemy.reset(10, 20);
 }
 
 //Lesson 10
