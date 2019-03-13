@@ -119,7 +119,7 @@ function collectStar(player, star){
 	star.kill();
 	star.reset (Math.floor(Math.random() * 750), 0);
 
-	if(score % 10 = 0){
+	if(score % 10 == 0){
 		health = healths.create(Math.floor(Math.random() * 750), 0, "health");
 		health.body.gravity.y = 200;
 		health.body.bounce.y = 0.2
